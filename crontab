@@ -1,0 +1,2 @@
+# Syncs container with git repo
+*/30 * * * * root bash git-sync.sh
