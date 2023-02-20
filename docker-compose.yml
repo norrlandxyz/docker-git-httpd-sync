@@ -1,10 +1,11 @@
 version: '3'
 services:
-  httpd:
-    image: gitsync
-    restart: always
-    env_file:
-      - container.env
-    #REMOVE WHEN USING PROXY:
-    ports:
-      - "8080:80"
+    httpd:
+        image: "norrlands/docker-git-httpd-sync"
+        restart: "always"
+        networks: ["web"]
+        env_file:
+          - container.env
+networks:
+    web:
+        external: true
